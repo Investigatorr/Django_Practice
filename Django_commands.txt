@@ -1,0 +1,78 @@
+﻿url매핑 - 서버에서 내가 입력한 url 주소를 /로 나눠서 하나씩 매핑 시켜서 html정보를 보내주는 것
+	* MVT패턴 
+
+1. view - controller역할, 데이터를 가져오고 변형하는 컴포넌트()
+
+2. Templete - 데이터를 사용자에게 보여주는 컴포넌트https://docs.djangoproject.com/ko/2.1/intro/tutorial02/
+	* cmd창에서 쟝고에 쓸 가상환경 만들기
+=================================================================================
+conda create -n djangoenv python=3.6
+	* 장고 가상환경 접속
+
+activate django
+	* 쟝고 설치
+
+pip install django
+	* 설치 잘 됐는지 확인
+
+pip list django
+	* 11.쟝고 폴더에서 step01이라는 빈 폴더 만들기
+
+= 웹서버 없이는 로직을 처리할 수 없다. 뷰(컨트롤러랑 같은 역할)= %태그는 html 아니다. 로직을 처리하는 태그. {%}= 원래 html에서는 반복문 사용 X / 쟝고에서는 가능할 듯??== 앱을 생성한 뒤 'myapp.apps.MyappConfig'를 추가
+	* step01 폴더로 들어가서 활성화
+	* django-admin startproject mysite 복붙
+	* dir 명령어 입력해서 제대로 만들어졌나 확인
+
+
+	* 비쥬얼 스튜디오 코드에서 mysite폴더 열고 manage.py열기   (mysite는 프로젝트 이름)
+
+왼쪽 아래 클릭하고 djangoenv환경으로 들어가기
+	* 확인해야 하는 것
+
+-url설정파일-프로젝트(앱) 설정파일-설정파일의 DB정보
+
+	* python manage.py runserver 개발서버 구동
+정상 구동이 된다면 현재  DOS창은 서버용으로 사용하게 된다.
+
+	* 새로운 DOS창 들어가서 mysite까지 패스 이동
+	* python manage.py startapp polls 눌러서 app구동
+
+F12 누르고 간단한 내용 수정 가능
+	* sqlite3 킨 다음 mysite안에 있는 sqlite3임포트
+
+
+	* polls내용 추가하고 상위(마이사이트)의 urls내용에 하위(폴스)내용 연결시키기
+=>> 내용 더 추가
+
+	* sqlite3에서 오른쪽 칸 새 데이터베이스 열기-> 마이사이트 파일 임포트
+
+
+	* python manage.py makemigrations polls
+
+
+	* db에 테이블 추가됨
+python manage.py migrate
+
+==================================================================================================================================================================
+	* 깔끔하게 명령어만 적은 것
+
+conda remove -n djangoenv python=3.6
+
+conda create -n djangoenv python=3.6
+
+activate djangoenvpip 
+
+show django
+
+pip install django
+
+cd ~~~.step01
+
+django-admin startproject mysite(프로젝트 생성)
+=> visual studio code 키고 폴더 열기
+
+python manage.py runserver (한번 실험삼아 돌려보기)
+
+python manage.py 
+
+startapp polls (polls앱 설치)
